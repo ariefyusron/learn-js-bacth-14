@@ -129,3 +129,10 @@ const countAlpha = (text, alpha, index = 0)=> {
 countAlpha('arief', 'r')
 
 console.log(result)
+
+// todolist sederhana
+// data list = array object
+// object title, desc
+// function untuk nambah data ke list tersebut
+// function untuk menghapus data di list tersebut
+// function untuk merubah data di list tersebut
