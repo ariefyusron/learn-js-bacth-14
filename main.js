@@ -6,6 +6,29 @@
 // // array
 // // object
 
+// const / let
+
+// const panjang = 10
+// const lebar = 10
+// const luas = (panjang === lebar) || (panjang > 10) && (lebar < 10)
+
+// && and
+// || or
+
+// (true && (true && true) || true) && (false || false) && true
+
+// (true && (true && true) || true) -> true
+// &&
+// (false || false) -> false
+// &&
+// true
+
+// false
+
+
+
+
+
 // let firstName = 'John'
 // console.log(firstName)
 // const age = 31
@@ -115,20 +138,20 @@
 // }))
 
 
-let result = 0
-const countAlpha = (text, alpha, index = 0)=> {
+// let result = 0
+// const countAlpha = (text, alpha, index = 0)=> {
 
-  if(index <= text.length - 1){
-    if(text[index] === alpha) {
-      result = result + 1
-    }
-    countAlpha(text, alpha, index + 1)
-  }
-}
+//   if(index <= text.length - 1){
+//     if(text[index] === alpha) {
+//       result = result + 1
+//     }
+//     countAlpha(text, alpha, index + 1)
+//   }
+// }
 
-countAlpha('arief', 'r')
+// countAlpha('arief', 'r')
 
-console.log(result)
+// console.log(result)
 
 // todolist sederhana
 // data list = array object
@@ -136,3 +159,40 @@ console.log(result)
 // function untuk nambah data ke list tersebut
 // function untuk menghapus data di list tersebut
 // function untuk merubah data di list tersebut
+
+// for (let i = 0; i < 10; i++) {
+//   for (let x = 0; x < 10; x++) {
+//     console.log('loop')
+//   }
+// }
+
+
+// let i = 0
+// while(i < 10) {
+//   console.log('while', i)
+//   i++;
+// }
+
+const member = ['anton', 'rizky', 'yusron']
+
+// for(let i = 0; i < member.length; i++) {
+//   console.log(member[i])
+// }
+
+member.forEach((item, index) => {
+  console.log(item, index)
+})
+
+member.map((item, index) => {
+  console.log(item, index)
+})
+
+const convertData = member.map((item) => {
+  return {
+    name: item
+  }
+})
+
+console.log(member)
+console.log(convertData)
+
