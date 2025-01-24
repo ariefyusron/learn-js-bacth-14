@@ -173,43 +173,75 @@
 //   i++;
 // }
 
-const member = ['anton', 'rizky', 'yusron']
+// const member = ['anton', 'rizky', 'yusron']
 
-// for(let i = 0; i < member.length; i++) {
-//   console.log(member[i])
-// }
+// // for(let i = 0; i < member.length; i++) {
+// //   console.log(member[i])
+// // }
 
-member.forEach((item, index) => {
-  console.log(item, index)
+// member.forEach((item, index) => {
+//   console.log(item, index)
+// })
+
+// member.map((item, index) => {
+//   console.log(item, index)
+// })
+
+// const convertData = member.map((item) => {
+//   return {
+//     name: item,
+//     age: 12
+//   }
+// })
+
+// console.log(member)
+// console.log(convertData)
+
+// const kelas = [
+//   {
+//     name: 'anton',
+//     age: 19
+//   },
+//   {
+//     name: 'rizky',
+//     age: 20
+//   }
+// ]
+
+// kelas.forEach((item) => {
+//   console.log('name: ', item.name)
+//   console.log('age: ', item.age)
+//   console.log('------------')
+// })
+
+let todo = []
+
+const addTodo = (data) => {
+  todo = [
+    data,
+    ...todo
+  ]
+}
+
+const deleteTodo = (index) => {
+  todo = todo.filter((e, i) => i !== index)
+}
+
+addTodo({
+  title: 'Profile',
+  desc: 'Bikin fitur Profile'
 })
 
-member.map((item, index) => {
-  console.log(item, index)
+addTodo({
+  title: 'HOme',
+  desc: 'Bikin fitur Home'
 })
 
-const convertData = member.map((item) => {
-  return {
-    name: item,
-    age: 12
-  }
+addTodo({
+  title: 'Setting',
+  desc: 'Bikin fitur Setting'
 })
 
-console.log(member)
-console.log(convertData)
+deleteTodo(1)
 
-const kelas = [
-  {
-    name: 'anton',
-    age: 19
-  },
-  {
-    name: 'rizky',
-    age: 20
-  }
-]
-
-kelas.forEach((item) => {
-  console.log('name: ', item.name)
-  console.log('age: ', item.age)
-  console.log('------------')
-})
+console.log(todo)
