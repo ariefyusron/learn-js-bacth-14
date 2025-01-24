@@ -189,10 +189,27 @@ member.map((item, index) => {
 
 const convertData = member.map((item) => {
   return {
-    name: item
+    name: item,
+    age: 12
   }
 })
 
 console.log(member)
 console.log(convertData)
 
+const kelas = [
+  {
+    name: 'anton',
+    age: 19
+  },
+  {
+    name: 'rizky',
+    age: 20
+  }
+]
+
+kelas.forEach((item) => {
+  console.log('name: ', item.name)
+  console.log('age: ', item.age)
+  console.log('------------')
+})
