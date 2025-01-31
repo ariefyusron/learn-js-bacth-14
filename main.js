@@ -278,24 +278,44 @@
 // Form
 const form = document.getElementById('my-form')
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault()
+const showTable = (username, password) => {
+  const table = document.getElementById('my-table')
+  table.style.visibility = 'visible'
+
+  const btnClear = document.getElementById('btn-clear')
+  btnClear.style.visibility = 'visible'
+
+  const colUsername = document.getElementById('col-username')
+  const colPassword = document.getElementById('col-password')
+
+  colUsername.innerText = username
+  colPassword.innerText = password
+}
+
+const data = JSON.parse(localStorage.getItem('data'))
+
+
+if(!!data?.username && !!data?.password) {
+  showTable(data.username, data.password)
+}
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
 
   const username = document.getElementById('username').value
   const password = document.getElementById('password').value
 
   if(!!username && !!password) {
-    const table = document.getElementById('my-table')
-    table.style.visibility = 'visible'
+    showTable(username, password)
 
-    const btnClear = document.getElementById('btn-clear')
-    btnClear.style.visibility = 'visible'
-  
-    const colUsername = document.getElementById('col-username')
-    const colPassword = document.getElementById('col-password')
-  
-    colUsername.innerText = username
-    colPassword.innerText = password
+    const payload = {
+      username: username,
+      password: password
+    }
+
+    localStorage.setItem('data', JSON.stringify(payload))
+
+    form.reset()
   } else {
     alert('username dan password harus diisi')
   }
@@ -308,5 +328,5 @@ btnClear.addEventListener('click', () => {
   table.style.visibility = 'hidden'
   btnClear.style.visibility = 'hidden'
 
-  form.reset()
+  localStorage.clear()
 })
