@@ -6,9 +6,28 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="first">Hello world</div>
-  <div class="second_class">Hello world!</div>
-  <div>Hello world!!</div>
+  <form id="my-form">
+    <input id="username" type="text" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+
+    <button type="submit">Login</button>
+  </form>
+
+  <br />
+  <br />
+
+  <table id="my-table" border="1" style="visibility: hidden;">
+    <tr>
+      <td>Username</td>
+      <td>Password</td>
+    </tr>
+    <tr>
+      <td id="col-username"></td>
+      <td id="col-password"></td>
+    </tr>
+  </table>
+
+  <button id="btn-clear" style="visibility: hidden;">Clear</button>
 
   <script src="main.js"></script>
 </body>

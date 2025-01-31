@@ -251,9 +251,62 @@
 // element by tag
 // element by class
 
-const first = document.getElementById('first')
-const newElement = document.createElement('div')
-newElement.id = "id_baru"
-newElement.innerText = "Test"
-newElement.style.color = 'red'
-first.appendChild(newElement)
+// const interval = setInterval(() => {
+//   console.log('interval')
+// }, 1000);
+
+// setTimeout(() => {
+//   clearInterval(interval)
+// }, 5000)
+
+// const onClickFirst = () => {
+//   const newElement = document.createElement('div')
+//   newElement.id = "id_baru"
+//   newElement.innerText = "Test"
+//   newElement.style.color = 'red'
+//   first.appendChild(newElement)
+// }
+
+// const first = document.getElementById('first')
+// first.onclick = onClickFirst
+// // addEventListener('click', onClickFirst)
+
+// addEventListener('DOMContentLoaded', () => {
+  
+// })
+
+// Form
+const form = document.getElementById('my-form')
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+
+  const username = document.getElementById('username').value
+  const password = document.getElementById('password').value
+
+  if(!!username && !!password) {
+    const table = document.getElementById('my-table')
+    table.style.visibility = 'visible'
+
+    const btnClear = document.getElementById('btn-clear')
+    btnClear.style.visibility = 'visible'
+  
+    const colUsername = document.getElementById('col-username')
+    const colPassword = document.getElementById('col-password')
+  
+    colUsername.innerText = username
+    colPassword.innerText = password
+  } else {
+    alert('username dan password harus diisi')
+  }
+})
+
+const btnClear = document.getElementById('btn-clear')
+
+btnClear.addEventListener('click', () => {
+  const table = document.getElementById('my-table')
+  table.style.visibility = 'hidden'
+  btnClear.style.visibility = 'hidden'
+
+  form.reset()
+})
