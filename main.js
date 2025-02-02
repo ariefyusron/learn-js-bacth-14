@@ -331,34 +331,51 @@ btnClear.addEventListener('click', () => {
   localStorage.clear()
 })
 
-const listTable = [
-  {
-    username: 'arief',
-    password: 'yusron'
-  },
-  {
-    username: 'arief 2',
-    password: 'yusron 2'
-  },
-  {
-    username: 'arief 2',
-    password: 'yusron 2'
-  }
-]
+// const listTable = []
 
-const table = document.getElementById('my-table')
+// const table = document.getElementById('my-table')
 
-const fragment = document.createDocumentFragment()
-listTable.forEach((item) => {
-  const tr = document.createElement('tr')
-  const td = `
-      <td>${item.username}</td>
-      <td>${item.password}</td>
-  `
-  tr.innerHTML = td
-  fragment.appendChild(tr)
-})
+// const fragment = document.createDocumentFragment()
+// listTable.forEach((item) => {
+//   const tr = document.createElement('tr')
+//   const td = `
+//       <td>${item.username}</td>
+//       <td>${item.password}</td>
+//   `
+//   tr.innerHTML = td
+//   fragment.appendChild(tr)
+// })
 
-table.appendChild(fragment)
+// table.appendChild(fragment)
 
 //Reflow & Repaint //display: none
+
+
+
+const getData = () => {
+  fetch('https://dummyjson.com/todos')
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data)
+    const table = document.getElementById('my-table')
+    document.getElementById('loading').style.display = 'none'
+
+    const fragment = document.createDocumentFragment()
+    data.todos.forEach((item) => {
+      const tr = document.createElement('tr')
+      const td = `
+        <td>${item.userId}</td>
+        <td>${item.todo}</td>
+      `
+      tr.innerHTML = td
+      fragment.appendChild(tr)
+    })
+
+    table.appendChild(fragment)
+  })
+  .catch(() => {
+    console.log('error')
+  })
+}
+
+getData();
