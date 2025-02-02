@@ -330,3 +330,34 @@ btnClear.addEventListener('click', () => {
 
   localStorage.clear()
 })
+
+const listTable = [
+  {
+    username: 'arief',
+    password: 'yusron'
+  },
+  {
+    username: 'arief 2',
+    password: 'yusron 2'
+  },
+  {
+    username: 'arief 2',
+    password: 'yusron 2'
+  }
+]
+
+const table = document.getElementById('my-table')
+
+table.style.display = 'none'
+listTable.forEach((item) => {
+  const tr = document.createElement('tr')
+  const td = `
+      <td>${item.username}</td>
+      <td>${item.password}</td>
+  `
+  tr.innerHTML = td
+  table.appendChild(tr)
+})
+table.style.display = 'block'
+
+//Reflow & Repaint //display: none
