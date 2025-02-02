@@ -348,7 +348,7 @@ const listTable = [
 
 const table = document.getElementById('my-table')
 
-table.style.display = 'none'
+const fragment = document.createDocumentFragment()
 listTable.forEach((item) => {
   const tr = document.createElement('tr')
   const td = `
@@ -356,8 +356,9 @@ listTable.forEach((item) => {
       <td>${item.password}</td>
   `
   tr.innerHTML = td
-  table.appendChild(tr)
+  fragment.appendChild(tr)
 })
-table.style.display = 'block'
+
+table.appendChild(fragment)
 
 //Reflow & Repaint //display: none
