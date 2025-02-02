@@ -302,8 +302,8 @@ if(!!data?.username && !!data?.password) {
 form.addEventListener('submit', (event) => {
   event.preventDefault()
 
-  const username = document.getElementById('username').value
-  const password = document.getElementById('password').value
+  const username = event.target.username.value
+  const password = event.target.password.value
 
   if(!!username && !!password) {
     showTable(username, password)
@@ -315,7 +315,7 @@ form.addEventListener('submit', (event) => {
 
     localStorage.setItem('data', JSON.stringify(payload))
 
-    form.reset()
+    // form.reset()
   } else {
     alert('username dan password harus diisi')
   }
