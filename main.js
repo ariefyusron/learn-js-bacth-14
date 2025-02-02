@@ -315,7 +315,7 @@ form.addEventListener('submit', (event) => {
 
     localStorage.setItem('data', JSON.stringify(payload))
 
-    // form.reset()
+    form.reset()
   } else {
     alert('username dan password harus diisi')
   }
