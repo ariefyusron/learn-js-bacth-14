@@ -352,11 +352,39 @@ btnClear.addEventListener('click', () => {
 
 
 
-const getData = () => {
-  fetch('https://dummyjson.com/todos')
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data)
+// const getData = () => {
+//   fetch('https://dummyjson.com/todos')
+//   .then((res) => res.json())
+//   .then((data) => {
+//     console.log(data)
+//     const table = document.getElementById('my-table')
+//     document.getElementById('loading').style.display = 'none'
+
+//     const fragment = document.createDocumentFragment()
+//     data.todos.forEach((item) => {
+//       const tr = document.createElement('tr')
+//       const td = `
+//         <td>${item.userId}</td>
+//         <td>${item.todo}</td>
+//       `
+//       tr.innerHTML = td
+//       fragment.appendChild(tr)
+//     })
+
+//     table.appendChild(fragment)
+//   })
+//   .catch((error) => {
+//     console.log('error')
+//   })
+// }
+// getData();
+
+
+const getData = async () => {
+  try {
+    const res = await fetch('https://dummyjson.com/todos')
+    const data = await res.json()
+
     const table = document.getElementById('my-table')
     document.getElementById('loading').style.display = 'none'
 
@@ -372,10 +400,9 @@ const getData = () => {
     })
 
     table.appendChild(fragment)
-  })
-  .catch(() => {
-    console.log('error')
-  })
+  } catch (error) {
+    console.log('error', error)
+  }
 }
 
-getData();
+getData()
