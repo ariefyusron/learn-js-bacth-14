@@ -4,33 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <form id="my-form">
-    <input id="username" name="username" type="text" placeholder="Username" />
-    <input id="password" name="password" type="password" placeholder="Password" />
+  <div id="app"></div>
 
-    <button type="submit">Login</button>
-  </form>
-
-  <br />
-  <br />
-
-  <h1 id="loading">Loading...</h1>
-
-  <table id="my-table" border="1" style="visibility: hidden;">
-    <tr>
-      <td>Username</td>
-      <td>Password</td>
-    </tr>
-    <tr>
-      <td id="col-username"></td>
-      <td id="col-password"></td>
-    </tr>
-  </table>
-
-  <button id="btn-clear" style="visibility: hidden;">Clear</button>
-
-  <script src="main.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/jsx" src="main.js"></script>
 </body>
 </html>
